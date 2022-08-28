@@ -62,7 +62,7 @@ class ErrorLog implements LoggerInterface {
   /**
    * {@inheritdoc}
    */
-  public function log($level, $message, array $context = []) {
+  public function log($level, $message, array $context = []): void {
     $config = $this->configFactory->get('error_log.settings');
     if (empty($config->get('log_levels')["level_$level"])) {
       return;

@@ -164,7 +164,7 @@ parameters:
     # Specify allowed request methods, specify ['*'] to allow all possible ones.
     allowedMethods: ['GET', 'POST',]
     # Configure requests allowed from specific origins.
-    allowedOrigins: ['http://localhost:3000', 'https://yellow-website.com/contact', 'https://dev.yellow-website.com/about','https://dev.yellow-website.com/theme-gallery','https://dev.yellow-website.com/contact','https://dev.yellow-website.com']
+    allowedOrigins: ['http://localhost:3000', 'https://yellow-website.com', 'https://yellow-website.com/contact','https://themes.rdbajra.com']
     # Sets the Access-Control-Expose-Headers header.
     exposedHeaders: false
     # Sets the Access-Control-Max-Age header.

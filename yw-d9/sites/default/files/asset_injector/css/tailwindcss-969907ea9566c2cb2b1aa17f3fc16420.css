@@ -1,0 +1,30 @@
+.w-40{
+	width: 10rem;
+} 
+.h-40{
+	height:10rem;
+} 
+.p-3{
+	padding: 0.75rem;
+} 
+.m-1{
+	margin: 0.25rem;
+} 
+.m-5{
+	margin: 1.25rem;
+}
+.border{
+	border-width: 1px;
+}
+.flex{
+	display: flex;
+}
+.flex-col{
+	flex-direction: column;
+}
+.items-center{
+	align-items: center;
+} 
+.justify-center{
+	justify-content: center;
+}

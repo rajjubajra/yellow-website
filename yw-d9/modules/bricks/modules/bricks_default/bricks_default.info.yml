@@ -5,7 +5,7 @@ type: module
 core: 8.x
 core_version_requirement: ^8 || ^9
 
-# Information added by Drupal.org packaging script on 2021-08-28
-version: '2.0.1'
+# Information added by Drupal.org packaging script on 2022-07-18
+version: '2.0.3'
 project: 'bricks'
-datestamp: 1630134537
+datestamp: 1658177890

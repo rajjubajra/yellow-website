@@ -1,7 +1,7 @@
 Error Log
 =========
 
-Once Drupal 8 bootstraps, it sends only a subset of errors to PHP's error log —
+Once Drupal bootstraps, it sends only a subset of errors to PHP's error log —
 which could be, for example, an error log in Apache, or stderr on the command
 line.
 

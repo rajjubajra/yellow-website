@@ -29,7 +29,7 @@ class ErrorLogTest extends BrowserTestBase {
   /**
    * Tests Error Log module.
    */
-  public function testErrorLog() {
+  public function testErrorLog(): void {
     $admin_user = $this->drupalCreateUser(['administer site configuration']);
     $this->drupalLogin($admin_user);
     $this->drupalGet('admin/config/development/logging');

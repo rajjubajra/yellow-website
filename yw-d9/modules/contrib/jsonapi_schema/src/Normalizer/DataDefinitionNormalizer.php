@@ -3,6 +3,7 @@
 namespace Drupal\jsonapi_schema\Normalizer;
 
 use Drupal\Component\Utility\NestedArray;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\TypedData\DataDefinitionInterface;
 use Drupal\serialization\Normalizer\NormalizerBase;
 
@@ -68,7 +69,11 @@ class DataDefinitionNormalizer extends NormalizerBase {
         && !empty($context['parent']->getSetting('allowed_values'))
       ) {
         $allowed_values = $context['parent']->getSetting('allowed_values');
-        $property['enum'] = array_keys($allowed_values);
+        // Include titles for UI integration.
+        // @see https://json-schema.org/understanding-json-schema/reference/generic.html?highlight=enum#annotations
+        $composition = $context['cardinality'] === FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED ? 'anyOf' : 'oneOf';
+        array_walk($allowed_values, function (&$v, $k) { $v = ['const' => $k, 'title' => $v]; });
+        $property[$composition] = array_values($allowed_values);
       }
     }
 
@@ -161,7 +166,12 @@ class DataDefinitionNormalizer extends NormalizerBase {
    *   purposes.
    */
   protected function requiredProperty(DataDefinitionInterface $property) {
-    return $property->isReadOnly() || $property->isRequired();
+    // We must test all three values, because it may be possible a computed
+    // field has its read-only value explicitly set to a contradictory value, in
+    // which case the computed state is not taken into consideration. This is
+    // thus the safest test.
+    return $property->isRequired()
+      && (!$property->isReadOnly() && !$property->isComputed());
   }
 
   /**

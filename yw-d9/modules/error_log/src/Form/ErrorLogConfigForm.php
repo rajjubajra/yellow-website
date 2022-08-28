@@ -12,8 +12,11 @@ class ErrorLogConfigForm {
 
   /**
    * Builds Error Log config form.
+   *
+   * @param mixed[] $form
+   *   The logging and errors config form.
    */
-  public static function buildForm(array &$form) {
+  public static function buildForm(array &$form): void {
     $config = \Drupal::config('error_log.settings');
     $form['error_log'] = [
       '#type'          => 'details',
@@ -48,8 +51,13 @@ class ErrorLogConfigForm {
 
   /**
    * Submits Error Log config form.
+   *
+   * @param mixed[] $form
+   *   The logging and errors config form.
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   The form state.
    */
-  public static function submitForm(array &$form, FormStateInterface $form_state) {
+  public static function submitForm(array &$form, FormStateInterface $form_state): void {
     \Drupal::configFactory()->getEditable('error_log.settings')
       ->set('log_levels', $form_state->getValue(['error_log', 'log_levels']))
       ->set('ignored_channels', static::extractIgnoredChannels($form_state->getValue([
@@ -61,8 +69,11 @@ class ErrorLogConfigForm {
 
   /**
    * Extracts list of ignored channels from string.
+   *
+   * @return string[]
+   *   Array of ignored channels.
    */
-  public static function extractIgnoredChannels($string) {
+  public static function extractIgnoredChannels(string $string): array {
     return array_map('trim', preg_split('/\R/', $string, -1, PREG_SPLIT_NO_EMPTY));
   }
 

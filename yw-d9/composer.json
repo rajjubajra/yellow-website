@@ -16,21 +16,26 @@
     ],
     "require": {
         "composer/installers": "^1.9",
-        "drupal/content_access": "^1.0@alpha",
-        "drupal/core-composer-scaffold": "^9.2",
-        "drupal/core-project-message": "^9.2",
-        "drupal/core-recommended": "^9.2",
-        "drupal/core-vendor-hardening": "^9.2",
-        "drupal/jsonapi_explorer": "^1.1",
-        "drupal/smart_date_calendar_kit": "^2.0",
-        "drupal/webform_rest": "^4.0"
+        "drupal/core-composer-scaffold": "^9.4",
+        "drupal/core-project-message": "^9.4",
+        "drupal/core-recommended": "^9.4",
+        "drupal/core-vendor-hardening": "^9.4",
+        "drupal/smart_date": "^3.5",
+        "drupal/views_data_export": "^1.1"
     },
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "drupal/core-composer-scaffold": true,
+            "drupal/core-project-message": true,
+            "drupal/core-vendor-hardening": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        },
         "sort-packages": true
     },
     "extra": {
