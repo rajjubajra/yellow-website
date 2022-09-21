@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/react-apps/yw-account/static/css/main.6aed2ba8.css",
-    "main.js": "/react-apps/yw-account/static/js/main.ac3bdc2d.js",
+    "main.css": "/react-apps/yw-account/static/css/main.51f653f8.css",
+    "main.js": "/react-apps/yw-account/static/js/main.bdf1df14.js",
     "index.html": "/react-apps/yw-account/index.html",
-    "main.6aed2ba8.css.map": "/react-apps/yw-account/static/css/main.6aed2ba8.css.map",
-    "main.ac3bdc2d.js.map": "/react-apps/yw-account/static/js/main.ac3bdc2d.js.map"
+    "main.51f653f8.css.map": "/react-apps/yw-account/static/css/main.51f653f8.css.map",
+    "main.bdf1df14.js.map": "/react-apps/yw-account/static/js/main.bdf1df14.js.map"
   },
   "entrypoints": [
-    "static/css/main.6aed2ba8.css",
-    "static/js/main.ac3bdc2d.js"
+    "static/css/main.51f653f8.css",
+    "static/js/main.bdf1df14.js"
   ]
 }
